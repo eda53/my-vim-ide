@@ -9,5 +9,7 @@ cat .vimrc
 
 
 call plug#begin('~/.vim/plugin')
+
 Plug 'https://github.com/eda53/my-vim-ide.git'
+
 call plug#end()

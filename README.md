@@ -9,8 +9,12 @@ cd ~/
 cat .vimrc  
 
 " .vimrc configuration  
-call plug#begin('~/.vim/plugin')  
+call plug#begin('~/.vim/')  
 Plug 'https://github.com/eda53/my-vim-ide.git'  
 call plug#end()  
 
+## Plug Update
+:PlutInstall  
+
+## Merge vimrc
 

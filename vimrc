@@ -24,6 +24,7 @@ set cscopetag
 set csto=1
 set foldmethod=indent
 set fdls=99
+"set spell
 
 filetype plugin indent on
 
@@ -142,6 +143,9 @@ set completeopt+=menuone
 set shortmess+=c
 set completeopt+=noinsert,noselect
 let g:mucomplete#enable_auto_at_startup=1
+set complete-=i
+set complete-=t
+let g:mucomplete#chains = { 'default': [ 'path', 'omni', 'keyn', 'dict', 'uspl', 'c-p', 'incl', 'tags' ] }
 
 
 " a.vim
@@ -150,4 +154,5 @@ let g:alternateSearchPath.='sfr:./include,sfr:..,'
 let g:alternateSearchPath.='sfr:../common,'
 let g:alternateNoDefaultAlternate=1
 nmap ;a :A<CR>
+"let  mapleader=";"
 

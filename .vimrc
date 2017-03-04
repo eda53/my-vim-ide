@@ -132,9 +132,11 @@ endf
 " vim-plug
 call plug#begin('~/.vim')
 Plug 'https://github.com/eda53/my-vim-ide.git'
+Plug 'https://github.com/vim-scripts/OmniCppComplete.git'
 Plug 'https://github.com/lifepillar/vim-mucomplete.git'
 Plug 'https://github.com/juneedahamed/vc.vim.git'
 Plug 'https://github.com/vim-scripts/a.vim.git'
+"Plug 'https://github.com/sirver/ultisnips.git'
 call plug#end()
 
 
@@ -145,7 +147,35 @@ set completeopt+=noinsert,noselect
 let g:mucomplete#enable_auto_at_startup=1
 set complete-=i
 set complete-=t
-let g:mucomplete#chains = { 'default': [ 'path', 'omni', 'keyn', 'dict', 'uspl', 'c-p', 'incl', 'tags' ] }
+let g:mucomplete#chains = { 'default': [ 'path', 'omni', 'ulti', 'keyn', 'dict', 'uspl', 'c-p', 'incl', 'tags' ] }
+
+
+" --- OmniCppComplete ---
+"set tags+=~/.vim/commontags
+" -- required --
+"set nocp " non vi compatible mode
+"filetype plugin on " enable plugins
+" -- optional --
+" auto close options when exiting insert mode or moving away
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave *  if pumvisible() == 0|pclose|endif
+"set completeopt=menu,menuone
+" -- configs --
+let OmniCpp_MayCompleteDot   = 1 " autocomplete with .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+let OmniCpp_SelectFirstItem  = 2 " select first item (but don't insert)
+let OmniCpp_NamespaceSearch  = 2 " search namespaces in this and included files
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
+let OmniCpp_LocalSearchDecl  = 1 " don't require special style of function opening braces
+let OmniCpp_DefaultNamespaces= ["std", "_GLIBCXX_STD", "_GLIBCXX_STD_A", "_GLIBCXX_STD_C"]
+" -- ctags --  -- proj.vim
+" map <ctrl>+F12 to generate ctags for current folder:
+"map <C-x><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+" add current directory's generated tags file to available tags
+"set tags+=./tags
 
 
 " a.vim

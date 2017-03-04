@@ -20,4 +20,8 @@ call plug#end()
 :PlutInstall  
 
 ## Merge vimrc
+cp ~/.vim/my-vim-ide/.vimrc ~  
+
+## cpp_tags
+todo  
 

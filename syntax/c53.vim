@@ -41,6 +41,11 @@ hi def link cBinaryOperatorError     Identifier
 hi def link cLogicalOperator         Identifier
 hi def link cLogicalOperatorError    Identifier
 
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=red ctermfg=darkred guibg=#FFD9D9
+match OverLength /\%81v.\+/
+
+
 "========================================================
 " My Own DataType
 "========================================================

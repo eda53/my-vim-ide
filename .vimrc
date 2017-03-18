@@ -136,6 +136,7 @@ Plug 'https://github.com/vim-scripts/OmniCppComplete.git'
 Plug 'https://github.com/lifepillar/vim-mucomplete.git'
 Plug 'https://github.com/juneedahamed/vc.vim.git'
 Plug 'https://github.com/vim-scripts/a.vim.git'
+Plug 'https://github.com/WolfgangMehner/c-support.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 "Plug 'https://github.com/sirver/ultisnips.git'
 call plug#end()
 
@@ -176,6 +177,7 @@ let OmniCpp_DefaultNamespaces= ["std", "_GLIBCXX_STD", "_GLIBCXX_STD_A", "_GLIBC
 "map <C-x><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 " add current directory's generated tags file to available tags
 "set tags+=./tags
+set tags+=~/.bin/cpp_tags
 
 
 " a.vim
@@ -186,3 +188,7 @@ let g:alternateNoDefaultAlternate=1
 nmap ;a :A<CR>
 "let  mapleader=";"
 
+" c.vim
+"let g:C_MapLeader = ';'
+"let g:C_CustomTemplateFile= $HOME.'/.vim/my-vim-ide/templates/c.templates'
+"let g:Templates_OverwriteWarning = 'yes'

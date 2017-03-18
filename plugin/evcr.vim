@@ -32,7 +32,7 @@ endif
 function! <SID>EcFillCopyrights()
 	"Check the 2nd Line contains \" * Copyright YYYY Evertz Microsystem\"
 	if getline(1) !~ "^\/\\* Copyright (c) \\d\\{4\\}"
-		let s:EvertzCopyright  = "/* Copyright (c) ". strftime("%Y") ." Evertz Microsystems Ltd. All rights reserved */\r"
+		let s:EvertzCopyright  = "/* Copyright (c) 2014-". strftime("%Y") ." Evertz Microsystems Ltd. All rights reserved */\r"
 "	if getline(2) !~ "^ \\* Copyright (c) \\d\\{4\\}"
 "		let s:EvertzCopyright  = "/*******************************************************************************\r"
 "		let s:EvertzCopyright .= " * Copyright (c) ". strftime("%Y") ." Evertz Microsystems Ltd. All rights reserved\r"

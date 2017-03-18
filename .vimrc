@@ -136,8 +136,11 @@ Plug 'https://github.com/vim-scripts/OmniCppComplete.git'
 Plug 'https://github.com/lifepillar/vim-mucomplete.git'
 Plug 'https://github.com/juneedahamed/vc.vim.git'
 Plug 'https://github.com/vim-scripts/a.vim.git'
-Plug 'https://github.com/WolfgangMehner/c-support.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
+"Plug 'https://github.com/WolfgangMehner/c-support.git', { 'do' : '../my-vim-ide/hijack-temp.sh', 'for' : 'cpp' }
+"Plug 'https://github.com/WolfgangMehner/c-support.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 "Plug 'https://github.com/sirver/ultisnips.git'
+"Plug 'https://github.com/LucHermitte/mu-template.git'
+Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 call plug#end()
 
 

@@ -101,6 +101,7 @@ if &diff
 	syntax off
 	"highlight! link DiffText MatchParen
 	nmap <F4> :qa<CR>
+	nmap <F8> :%diffput | wqa<CR>
 else
 	au VimEnter * if getfsize(expand("%")) < 1*1024*1024 | exe "WMToggle" | endif
 endif
@@ -141,6 +142,7 @@ Plug 'https://github.com/vim-scripts/a.vim.git'
 "Plug 'https://github.com/sirver/ultisnips.git'
 "Plug 'https://github.com/LucHermitte/mu-template.git'
 Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 
@@ -168,7 +170,7 @@ autocmd InsertLeave *  if pumvisible() == 0|pclose|endif
 let OmniCpp_MayCompleteDot   = 1 " autocomplete with .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem  = 2 " select first item (but don't insert)
+let OmniCpp_SelectFirstItem  = 1 " select first item inserted.
 let OmniCpp_NamespaceSearch  = 2 " search namespaces in this and included files
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1

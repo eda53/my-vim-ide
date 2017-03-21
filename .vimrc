@@ -18,6 +18,7 @@ set fp=astyle
 set hlsearch
 set list
 set listchars=tab:>-,trail:-
+set nolist
 "set vi='0,<50,s10,h
 "nmap <SPACE> <C-D>
 set cscopetag
@@ -65,6 +66,7 @@ endfunction
 "Taglist
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
+let Tlist_Sort_Type='name'
 "let g:winManagerWindowLayout="TagList,FileExplorer|BufExplorer"
 let g:winManagerWindowLayout="TagList|FileExplorer,BufExplorer"
 let g:winManagerWidth=25
@@ -140,6 +142,7 @@ Plug 'https://github.com/vim-scripts/a.vim.git'
 "Plug 'https://github.com/WolfgangMehner/c-support.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 "Plug 'https://github.com/sirver/ultisnips.git'
 "Plug 'https://github.com/LucHermitte/mu-template.git'
+Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 call plug#end()
 
@@ -151,7 +154,7 @@ set completeopt+=noinsert,noselect
 let g:mucomplete#enable_auto_at_startup=1
 set complete-=i
 set complete-=t
-let g:mucomplete#chains = { 'default': [ 'path', 'omni', 'ulti', 'keyn', 'dict', 'uspl', 'c-p', 'incl', 'tags' ] }
+let g:mucomplete#chains = { 'default': [ 'omni', 'path', 'ulti', 'keyn', 'dict', 'uspl', 'c-p', 'incl', 'tags' ] }
 
 
 " --- OmniCppComplete ---

@@ -395,12 +395,16 @@ let s:tlist_def_basic_settings =
 let s:tlist_def_beta_settings = 'beta;f:fragment;s:slot;v:pattern'
 
 " c language
-let s:tlist_def_c_settings = 'c;d:macro;g:enum;s:struct;u:union;t:typedef;' .
-                           \ 'v:variable;f:function'
+"let s:tlist_def_c_settings = 'c;d:macro;g:enum;s:struct;u:union;t:typedef;' .
+"                           \ 'v:variable;f:function'
+let s:tlist_def_c_settings = 'c;f:function;d:macro;g:enum;s:struct;u:union;' .
+                           \ 't:typedef;v:variable'
 
 " c++ language
-let s:tlist_def_cpp_settings = 'c++;n:namespace;v:variable;d:macro;t:typedef;' .
-                             \ 'c:class;g:enum;s:struct;u:union;f:function'
+"let s:tlist_def_cpp_settings = 'c++;n:namespace;v:variable;d:macro;t:typedef;' .
+"                             \ 'c:class;g:enum;s:struct;u:union;f:function'
+let s:tlist_def_cpp_settings = 'c++;c:class;f:function;n:namespace;v:variable;' .
+                             \ 'd:macro;t:typedef;g:enum;s:struct;u:union'
 
 " c# language
 let s:tlist_def_cs_settings = 'c#;d:macro;t:typedef;n:namespace;c:class;' .
@@ -3435,6 +3439,10 @@ function! s:Tlist_Window_Jump_To_Tag(win_ctrl)
     else
         " Selected a line which is not a tag name. Just edit the file
         let tagpat = ''
+    endif
+
+    if s:tlist_win_maximized
+        call s:Tlist_Window_Zoom()
     endif
 
     call s:Tlist_Window_Open_File(a:win_ctrl, s:tlist_{fidx}_filename, tagpat)

@@ -65,9 +65,11 @@ endfunction
 "Taglist
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
+let Tlist_Sort_Type='name'
+"let Tlist_Compact_Format=1
 "let g:winManagerWindowLayout="TagList,FileExplorer|BufExplorer"
 let g:winManagerWindowLayout="TagList|FileExplorer,BufExplorer"
-let g:winManagerWidth=25
+let g:winManagerWidth=30
 let g:persistentBehaviour=0
 "nmap w1 :FirstExplorerWindow<cr>
 "nmap w2 :BottomExplorerWindow<cr>
@@ -101,7 +103,7 @@ if &diff
 	syntax off
 	"highlight! link DiffText MatchParen
 	nmap <F4> :qa<CR>
-	nmap <F8> :%diffput | wqa<CR>
+	nmap <F8> :%diffput \| wqa<CR>
 else
 	au VimEnter * if getfsize(expand("%")) < 1*1024*1024 | exe "WMToggle" | endif
 endif

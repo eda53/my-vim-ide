@@ -135,6 +135,40 @@ func MyMake(...)
 	set makeprg=echo\ !!!!!!!!!!!\ \ \ \ \ \ Call:MM\ \ \ \ \ \ !!!!!!!!!!!!!
 endf
 
+" Help to vert win
+command -nargs=* -complete=help Help vertical belowright help <args>
+
+" runtime! ftplugin/man.vim
+" open man for word under cursor
+fun! ReadMan()
+  " Assign current word under cursor to a script variable:
+  let s:man_word = expand('<cword>')
+  " Open a new window:
+  :exe ":vne"
+  " Read in the manpage for man_word (col -b is for formatting):
+  :exe ":r!man " . s:man_word . " | col -b"
+  " Goto first line...
+  :exe ":goto"
+  " and delete it:
+  :exe ":delete"
+
+  :exe ":set wrap"
+  :exe ":set nomodifiable"
+  :exe ":set buftype=nofile"
+  if line("$") < 3
+  	:echo 'too short, lines:'.line("$").'. window closed!'
+	:exe ':q'
+  endif
+endfun
+" Map the K key to the ReadMan function:
+map M :call ReadMan()<CR>
+
+
+" Help (avoid-)hit-enter
+set cmdheight=2
+set shortmess+=T
+
+
 
 " vim-plug
 call plug#begin('~/.vim')

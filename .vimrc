@@ -91,9 +91,11 @@ nnoremap gp `[v`]
 "let g:ecAutoFill=1  "default is 0
 "let g:ecAuthor="Jayesh Joseph"   "default is Ethan Da
 
-" Don't know what patch it is.
+" Jump to the last postion.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+" format before write for c/cpp
+au BufWrite *\.\(h\|c\|cpp\) exe "normal gggqG"
 
 " Diff mode extr settings.
 if &diff

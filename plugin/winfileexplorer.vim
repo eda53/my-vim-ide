@@ -48,6 +48,9 @@ set cpo&vim
 if !exists("g:explMaxHeight")
 	let g:explMaxHeight=20
 endif
+if !exists("g:explMinHeight")
+	let g:explMinHeight=10
+endif
 
 " Split vertically instead of horizontally?
 if !exists("g:explVertical")
@@ -169,8 +172,9 @@ endfunction
 
 function! FileExplorer_ReSize()
   let nlines = min([line("$"), g:explMaxHeight])
+  let wh = max([nlines, g:explMinHeight])
 
-  exe nlines." wincmd _"
+  exe wh." wincmd _"
 endfunction
 
 function! FileExplorer_IsValid()

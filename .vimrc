@@ -62,25 +62,6 @@ function DiffFoldLevel()
 endfunction
 
 
-" VIM as IDE
-"Taglist
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Sort_Type='name'
-"let Tlist_Compact_Format=1
-"let g:winManagerWindowLayout="TagList,FileExplorer|BufExplorer"
-let g:winManagerWindowLayout="TagList|FileExplorer,BufExplorer"
-let g:winManagerWidth=25
-let g:persistentBehaviour=0
-"nmap w1 :FirstExplorerWindow<cr>
-"nmap w2 :BottomExplorerWindow<cr>
-nmap <F6> :WMToggle<CR>
-nmap <C-j>  <C-W>j
-nmap <C-k>  <C-W>k
-nmap <C-h>  <C-W>h
-nmap <C-l>  <C-W>l
-
-
 " Generic mappings.
 nmap <F3> :vimgrep  /\<<C-R>=expand("<cword>")<CR>\>/ %<CR>:cl<CR>
 nmap <Space> <C-F>
@@ -154,6 +135,7 @@ fun! ReadMan()
 
   :exe ":set wrap"
   :exe ":set nomodifiable"
+  :exe ":set nolist"
   :exe ":set buftype=nofile"
   if line("$") < 3
   	:echo 'too short, lines:'.line("$").'. window closed!'
@@ -186,6 +168,27 @@ Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hij
 Plug 'scrooloose/nerdcommenter'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
+
+
+" VIM as IDE
+"Taglist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Sort_Type='name'
+"let Tlist_Compact_Format=1
+"let g:winManagerWindowLayout="TagList,FileExplorer|BufExplorer"
+let g:winManagerWindowLayout="TagList|FileExplorer,BufExplorer"
+let g:winManagerWidth=25
+let g:persistentBehaviour=0
+let g:explMaxHeight=15
+let g:explMinHeight=15
+"nmap w1 :FirstExplorerWindow<cr>
+"nmap w2 :BottomExplorerWindow<cr>
+nmap <F6> :WMToggle<CR>
+nmap <C-j>  <C-W>j
+nmap <C-k>  <C-W>k
+nmap <C-h>  <C-W>h
+nmap <C-l>  <C-W>l
 
 
 " mucomplete
@@ -245,3 +248,4 @@ syntax enable
 set background=dark
 "set background=light
 colorscheme solarized
+"let &t_Co=256

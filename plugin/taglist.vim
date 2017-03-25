@@ -443,15 +443,15 @@ let s:tlist_def_fortran_settings = 'fortran;p:program;b:block data;' .
 let s:tlist_def_go_settings = 'go;f:function;p:package;t:struct'
 
 " HTML language
-let s:tlist_def_html_settings = 'html;a:anchor;f:function'
+let s:tlist_def_html_settings = 'html;f:function;a:anchor'
 
 " java language
-let s:tlist_def_java_settings = 'java;p:package;c:class;i:interface;' .
-                              \ 'g:enum;f:field;m:method'
+let s:tlist_def_java_settings = 'java;m:method;f:field;p:package;' .
+                              \ 'g:enum;c:class;i:interface'
 
 " javascript language
 let s:tlist_def_javascript_settings =
-            \ 'javascript;c:class;m:method;v:global;f:function;p:properties'
+            \ 'javascript;c:class;m:method;f:function;v:global;p:properties'
 
 " lisp language
 let s:tlist_def_lisp_settings = 'lisp;f:function'
@@ -473,11 +473,11 @@ let s:tlist_def_ocamal_settings = 'ocamal;M:module;v:global;t:type;'.
 let s:tlist_def_pascal_settings = 'pascal;f:function;p:procedure'
 
 " perl language
-let s:tlist_def_perl_settings = 'perl;c:constant;l:label;p:package;s:subroutine'
+let s:tlist_def_perl_settings = 'perl;s:subroutine;c:constant;l:label;p:package'
 
 " php language
 let s:tlist_def_php_settings =
-            \ 'php;c:class;i:interface;d:constant;v:variable;f:function'
+            \ 'php;f:function;c:class;i:interface;d:constant;v:variable'
 
 " python language
 let s:tlist_def_python_settings = 'python;c:class;m:member;f:function'
@@ -542,11 +542,12 @@ let s:tlist_def_verilog_settings = 'verilog;m:module;c:constant;P:parameter;' .
             \ 'e:event;r:register;t:task;w:write;p:port;v:variable;f:function'
 
 " VHDL
-let s:tlist_def_vhdl_settings = 'vhdl;c:constant;t:type;T:subtype;r:record;e:entity;f:function;p:procedure;P:package'
+let s:tlist_def_vhdl_settings = 'vhdl;p:procedure;f:function;c:constant;'.
+			\ 't:type;T:subtype;r:record;e:entity;P:package'
 
 " vim language
 let s:tlist_def_vim_settings =
-            \ 'vim;v:variable;a:autocmds;c:commands;m:map;f:function'
+            \ 'vim;c:commands;f:function;v:variable;a:autocmds;m:map'
 
 " yacc language
 let s:tlist_def_yacc_settings = 'yacc;l:label'

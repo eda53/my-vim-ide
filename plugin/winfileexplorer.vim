@@ -44,6 +44,11 @@ set cpo&vim
 "---
 " Default settings for global configuration variables
 
+" max window height
+if !exists("g:explMaxHeight")
+	let g:explMaxHeight=20
+endif
+
 " Split vertically instead of horizontally?
 if !exists("g:explVertical")
   let g:explVertical=0
@@ -160,6 +165,12 @@ function! FileExplorer_Start()
 		exe 'normal! '.s:lastCursorColumn.'|'
 	end
 	let @"=@z
+endfunction
+
+function! FileExplorer_ReSize()
+  let nlines = min([line("$"), g:explMaxHeight])
+
+  exe nlines." wincmd _"
 endfunction
 
 function! FileExplorer_IsValid()

@@ -70,7 +70,7 @@ let Tlist_Sort_Type='name'
 "let Tlist_Compact_Format=1
 "let g:winManagerWindowLayout="TagList,FileExplorer|BufExplorer"
 let g:winManagerWindowLayout="TagList|FileExplorer,BufExplorer"
-let g:winManagerWidth=30
+let g:winManagerWidth=25
 let g:persistentBehaviour=0
 "nmap w1 :FirstExplorerWindow<cr>
 "nmap w2 :BottomExplorerWindow<cr>
@@ -84,6 +84,7 @@ nmap <C-l>  <C-W>l
 " Generic mappings.
 nmap <F3> :vimgrep  /\<<C-R>=expand("<cword>")<CR>\>/ %<CR>:cl<CR>
 nmap <Space> <C-F>
+" select just pasted
 nnoremap gp `[v`]
 
 
@@ -99,7 +100,7 @@ au BufWritePre *\.\(h\|c\|cpp\) exe "normal migggqG`i"
 
 " Diff mode extr settings.
 if &diff
-	set diffopt+=iwhite
+	"set diffopt+=iwhite
 	set nolist
 	"set bg=dark
 	color desert

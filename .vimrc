@@ -95,7 +95,7 @@ nnoremap gp `[v`]
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " format before write for c/cpp
-au BufWrite *\.\(h\|c\|cpp\) exe "normal gggqG"
+au BufWritePre *\.\(h\|c\|cpp\) exe "normal migggqG`i"
 
 " Diff mode extr settings.
 if &diff

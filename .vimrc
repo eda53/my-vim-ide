@@ -184,6 +184,7 @@ Plug 'https://github.com/vim-scripts/a.vim.git'
 Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 
@@ -238,3 +239,9 @@ nmap ;a :A<CR>
 "let g:C_MapLeader = ';'
 "let g:C_CustomTemplateFile= $HOME.'/.vim/my-vim-ide/templates/c.templates'
 "let g:Templates_OverwriteWarning = 'yes'
+
+" Solarized
+syntax enable
+set background=dark
+"set background=light
+colorscheme solarized

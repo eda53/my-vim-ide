@@ -78,6 +78,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " format before write for c/cpp
 au BufWritePre *\.\(h\|c\|cpp\) exe "normal migggqG`i"
+"au BufUnload    *\.\(h\|c\|cpp\) exe "!astyle ".expand(%)."<CR>"
 
 " Diff mode extr settings.
 if &diff
@@ -136,6 +137,7 @@ fun! ReadMan()
   :exe ":set wrap"
   :exe ":set nomodifiable"
   :exe ":set nolist"
+  :exe ":set nonumber"
   :exe ":set buftype=nofile"
   if line("$") < 3
   	:echo 'too short, lines:'.line("$").'. window closed!'

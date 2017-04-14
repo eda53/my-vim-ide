@@ -65,6 +65,17 @@ C-\  g
 C-\  s  
 C-\  c  
 
+### comment
+5\cc  
+3\cu  
+
+### diff-merge
+]c, [c  
+dp  
+:diffget  
+:%diffput, F8  
+F4  
+
 ## cpp_tags
 done  
 

@@ -60,7 +60,7 @@ C-j
 :MM  
 
 ### cscope
-updatecs.sh ../lib ../svn_externals
+updatecs.sh ../lib ../svn_externals  
 C-\  g  
 C-\  s  
 C-\  c  

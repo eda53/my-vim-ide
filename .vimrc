@@ -26,6 +26,7 @@ set csto=1
 set foldmethod=indent
 set fdls=99
 "set spell
+set modeline
 
 filetype plugin indent on
 

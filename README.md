@@ -15,7 +15,7 @@ Plug 'https://github.com/eda53/my-vim-ide.git'
 call plug#end()  
 
 ### Plug Update
-:PlutInstall  
+:PlugInstall  
 
 ### Merge vimrc
 [ -f ~/.vimrc ] && rm ~/.vimrc  

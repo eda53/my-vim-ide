@@ -77,9 +77,10 @@ nnoremap gp `[v`]
 " Jump to the last postion.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" format before write for c/cpp
-au BufWritePre *\.\(h\|c\|cpp\) exe "normal migggqG`i"
-"au BufUnload    *\.\(h\|c\|cpp\) exe "!astyle ".expand(%)."<CR>"
+if !&diff
+	" format before write for c/cpp
+	au BufWritePre *\.\(h\|hpp\|c\|cpp\) exe "normal migggqG`i"
+endif
 
 " Diff mode extr settings.
 if &diff
@@ -168,7 +169,6 @@ Plug 'https://github.com/vim-scripts/a.vim.git'
 "Plug 'https://github.com/LucHermitte/mu-template.git'
 Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/aperezdc/vim-template.git', { 'do' : '../my-vim-ide/hijack-temp.sh' }
-Plug 'scrooloose/nerdcommenter'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
@@ -245,10 +245,13 @@ nmap ;a :A<CR>
 "let g:C_MapLeader = ';'
 "let g:C_CustomTemplateFile= $HOME.'/.vim/my-vim-ide/templates/c.templates'
 "let g:Templates_OverwriteWarning = 'yes'
+" vim-template
+"let g:templates_debug = 1
+au BufReadPost *svn-commit.*tmp if getline(1)=="" | exe ":Template *svn-commit.tmp" | endif
 
 " Solarized
 syntax enable
-set background=dark
+"set background=dark
 "set background=light
-colorscheme solarized
+"colorscheme solarized
 "let &t_Co=256
